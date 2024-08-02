@@ -7,6 +7,11 @@ function adicionar() {
     let nomeProduto = produto.split(' - R$')[0];
     let valorUnitario = produto.split(' - R$')[1];
     let quantidade = document.getElementById('quantidade').value;
+    if (quantidade <= 0) {
+        alert("Insira uma quantidade válida");
+        document.getElementById('quantidade') = '';
+        adicionar()
+    }
 
     //calcular o preco, o subtotal
     let preco = valorUnitario * quantidade;
